@@ -1,0 +1,2 @@
+module ThingDataHelper
+end
