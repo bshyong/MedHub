@@ -7,7 +7,7 @@ Medhub::Application.routes.draw do
 
   root :to => 'home#index'
 
-  match "/login" => "home#login"
+  match "/signup" => "home#signup"
   match "/logout" => "home#logout"
 
   # The priority is based upon order of creation:
