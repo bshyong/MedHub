@@ -19,8 +19,8 @@ class HomeController < ApplicationController
 #
 #  end
 
-  def create_user
-    
+  def signup
+    @user = Thing.new
   end
 
   def logout

@@ -5,6 +5,8 @@ Medhub::Application.routes.draw do
 
   get "home/index"
 
+  resources "things"
+
   root :to => 'home#index'
 
   match "/signup" => "home#signup"
