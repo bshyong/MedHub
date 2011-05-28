@@ -26,6 +26,7 @@ section {
   background: #fff;
   width: 710px;
   display: inline-block;
+  vertical-align:top;
 
   
 }
