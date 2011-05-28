@@ -131,10 +131,10 @@ module Hypomodern # :nodoc:
         return if self.included_modules.include?(Hypomodern::FlexAttributes::InstanceMethods)
 
         # Provide default options
-        options[:class_name] ||= self.class_name + 'Attribute'
+        options[:class_name] ||= self.name + 'Attribute'
         options[:table_name] ||= options[:class_name].tableize
         options[:relationship_name] ||= options[:class_name].tableize.to_sym
-        options[:foreign_key] ||= self.class_name.foreign_key
+        options[:foreign_key] ||= "#{self.table_name.singularize.downcase}_id"
         options[:base_foreign_key] ||= self.name.underscore.foreign_key
         options[:name_field] ||= 'name'
         options[:value_field] ||= 'value'
