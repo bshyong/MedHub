@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528183340) do
+ActiveRecord::Schema.define(:version => 20110528180347) do
 
   create_table "thing_data", :force => true do |t|
     t.integer  "thing_id"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20110528183340) do
 
   create_table "things", :force => true do |t|
     t.integer  "thing_type"
-    t.integer  "upvote",     :default => 0
-    t.integer  "downvote",   :default => 0
+    t.integer  "upvote"
+    t.integer  "downvote"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
