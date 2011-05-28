@@ -1,5 +1,6 @@
 .container {
   width: 960px;
+  
 }
 
 body {
@@ -25,6 +26,7 @@ section {
   background: #fff;
   width: 710px;
   display: inline-block;
+
   
 }
 
@@ -120,6 +122,7 @@ a.signup_button {
 }
 
 footer {
+  clear: both;
   text-align: center;
   margin-top: 10px;
   width: 710px;
