@@ -5,20 +5,16 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-    # As is the 'standard' with rails apps we'll return the user record if the
-    # password is correct and nil if it isn't.
+
     def authenticate(email, password)
-      # Because we salt the passwords we can't do this query in one part, first
-      # we need to fetch the potential user
+
       if user = User.find_by_email(email)
-        # Then compare the provided password against the hashed one in the db.
+      
         if user.hashed_password == Digest::SHA2.hexdigest(user.salt + password)
-          # If they match we return the user
+
           return user
         end
       end
-      # If we get here it means either there's no user with that email, or the wrong
-      # password was provided.  But we don't want to let an attacker know which.
       return nil
     end
 

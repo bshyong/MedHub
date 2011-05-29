@@ -1,16 +1,17 @@
 Medhub::Application.routes.draw do
+  resources :users
+
   get "home/login"
 
   get "home/logout"
 
   get "home/index"
 
-  resources "things"
-
   root :to => 'home#index'
 
-  match "/signup" => "home#signup"
+  match "/signup" => "users#new"
   match "/logout" => "home#logout"
+  match "/login" => "home#login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

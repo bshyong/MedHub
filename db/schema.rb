@@ -10,24 +10,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528180347) do
+ActiveRecord::Schema.define(:version => 20110528210210) do
+
+  create_table "thing_attributes", :force => true do |t|
+    t.integer  "thing_id",   :null => false
+    t.string   "name",       :null => false
+    t.string   "value",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "thing_attributes", ["thing_id"], :name => "index_thing_attributes_on_thing_id"
 
   create_table "thing_data", :force => true do |t|
     t.integer  "thing_id"
-    t.string   "attribute"
+    t.string   "name"
     t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "thing_data", ["attribute"], :name => "index_thing_data_on_attribute"
+  add_index "thing_data", ["name"], :name => "index_thing_data_on_attribute"
   add_index "thing_data", ["thing_id"], :name => "index_thing_data_on_thing_id"
   add_index "thing_data", ["value"], :name => "index_thing_data_on_value"
 
   create_table "things", :force => true do |t|
     t.integer  "thing_type"
-    t.integer  "upvote"
-    t.integer  "downvote"
+    t.integer  "upvote",     :default => 0
+    t.integer  "downvote",   :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
