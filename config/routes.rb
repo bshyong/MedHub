@@ -13,6 +13,8 @@ Medhub::Application.routes.draw do
   match "/logout" => "home#logout"
   match "/login" => "home#login"
 
+  post "home/create_session"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

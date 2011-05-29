@@ -7,7 +7,10 @@ class User < ActiveRecord::Base
 
     attr_accessor :new_password, :new_password_confirmation
     validates_confirmation_of :new_password, :if=>:password_changed?
-    validates :email, :uniqueness => { :case_sensitive => false }
+    validates :email, :uniqueness => { :case_sensitive => false }, :presence => true, :email => true
+    validates :handle, :presence => true
+    validates :new_password, :presence => true
+    validates :new_password_confirmation, :presence => true
 
     before_save :hash_new_password, :if=>:password_changed?
 
