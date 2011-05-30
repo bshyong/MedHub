@@ -1,6 +1,3 @@
-<h1>Home#signup</h1>
-<p>Find me in app/views/home/signup.html.erb</p>
-
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -22,6 +19,10 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
+    <%= f.label :handle %><br />
+    <%= f.text_field :handle %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
@@ -37,5 +38,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-
